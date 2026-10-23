@@ -1,3 +1,3 @@
 # Python - Hello, World
 
-Introduction to Python: running scripts, printing values and slicing strings.
+Exercises on running Python scripts, printing values and manipulating strings.
