@@ -32,8 +32,9 @@ class Square:
     @position.setter
     def position(self, value):
         """Validate and update the position."""
-        if (not isinstance(value, tuple) or len(value) != 2
-                or not all(isinstance(n, int) and n >= 0 for n in value)):
+        valid_pair = isinstance(value, tuple) and len(value) == 2
+        if not valid_pair or not all(
+                isinstance(n, int) and n >= 0 for n in value):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
