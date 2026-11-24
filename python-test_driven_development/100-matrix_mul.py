@@ -8,7 +8,7 @@ computing their matrix product.
 
 
 def matrix_mul(m_a, m_b):
-    """Multiplies two validated matrices m_a and m_b and returns the product."""
+    """Multiplies two validated matrices m_a and m_b."""
     if not isinstance(m_a, list):
         raise TypeError("m_a must be a list")
     if not isinstance(m_b, list):
