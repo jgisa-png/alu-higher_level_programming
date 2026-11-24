@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Sends a POST request with a letter parameter to search_user and parses JSON."""
+"""Sends a POST request to search_user and parses the JSON response."""
 import sys
 import requests
 
