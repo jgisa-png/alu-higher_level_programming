@@ -86,3 +86,21 @@ class TestSquare(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+    def test_save_and_load_file(self):
+        """Test Square.save_to_file and Square.load_from_file."""
+        import os
+        if os.path.exists("Square.json"):
+            os.remove("Square.json")
+        self.assertEqual(Square.load_from_file(), [])
+        Square.save_to_file(None)
+        self.assertEqual(Square.load_from_file(), [])
+        Square.save_to_file([])
+        self.assertEqual(Square.load_from_file(), [])
+        s1 = Square(1)
+        Square.save_to_file([s1])
+        loaded = Square.load_from_file()
+        self.assertEqual(len(loaded), 1)
+        self.assertEqual(str(loaded[0]), str(s1))
+        if os.path.exists("Square.json"):
+            os.remove("Square.json")
